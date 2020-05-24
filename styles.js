@@ -54,7 +54,7 @@ export const styles = StyleSheet.create({
       },
   
       itemName:{flexDirection:'row',justifyContent:'space-between',marginTop: 10,paddingLeft:15},
-      itemRating:{flexDirection:'row',justifyContent:'space-between',width:'30%' ,padding:5},
+      itemRating:{flexDirection:'row',justifyContent:'space-between',width:'30%' ,padding:5,marginRight:10},
       itemIcons:{flexDirection:'row',justifyContent:'space-between',width:'30%',marginTop: 10,padding:5},
       itemDesc:{flexDirection:'column',justifyContent:'space-between',marginTop: 12,paddingLeft:15},
       itemDiscount:{flexDirection:'row',justifyContent:'space-between',width:'100%',marginTop: 10},
