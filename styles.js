@@ -7,8 +7,8 @@ export const styles = StyleSheet.create({
       flex: 1,
       alignItems: 'flex-start',
       justifyContent: 'flex-start',
-      paddingTop: 20,
-      backgroundColor: '#ecf0f1',
+      paddingTop: 0,
+      backgroundColor: '#ffff',
     },
     paragraph: {
       margin: 24,
@@ -18,11 +18,11 @@ export const styles = StyleSheet.create({
       color: '#34495e',
     },
    tabs: {height:"7%",
-   backgroundColor:'#e0e0e0'
+   backgroundColor:'white'
    },
     list:{
-      height: '93%',
-      paddingBottom: '25%',
+      height: '95%',
+      paddingBottom: '0%',
     },
     title: {
       alignSelf:'center',
@@ -91,7 +91,23 @@ export const styles = StyleSheet.create({
         width:'14%',
         marginTop: 10,
         backgroundColor:'#0a6ea3'
-      }
+      },
+      scrollStyle: {
+        backgroundColor: 'white',
+        paddingLeft: 65,
+        paddingRight: 65,
+        // justifyContent: 'center',
+      },
+      tabBarTextStyle: {
+        fontSize: 14,
+        fontWeight: 'normal',
+      },
+      underlineStyle: {
+        height:11,
+        backgroundColor: 'blue',
+        borderRadius: 3,
+        width: 15,
+      },
   
       
   });

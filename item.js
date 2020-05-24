@@ -26,14 +26,15 @@ const text_truncate = (str, length, ending) =>{
   };
 
   
-export  default  Item=({ id, item }) =>{
-    const [expanded, setExpanded] =useState(false);
-    const [selected, setSelected] = useState(false);
+export  default  Item=({ id, item,select,setSelected }) =>{
+
+    let selected=   select===item.id
+    const [expanded, setExpanded] =useState(selected);
     const [count, setCount] = useState(0);
     let desc=expanded ? item.desc:text_truncate(item.desc,54,'...')
     return (
       <TouchableWithoutFeedback
-        onPress={() => setSelected(!selected)}
+        onPress={() => setSelected(item)}
         style={[
           styles.item,
           { backgroundColor: '#6e3b6e'},
@@ -41,7 +42,7 @@ export  default  Item=({ id, item }) =>{
       >
   
   
-       <View style={[styles.card,{ width:selected?"98%":"90%", borderRadius:selected?0:20}]}>
+       <View style={[styles.card,{ width:selected||expanded?"98%":"90%", borderRadius:selected?20:0}]}>
        {selected &&
                 <Image
                       style={{width:'100%',height: 200}}
@@ -62,7 +63,7 @@ export  default  Item=({ id, item }) =>{
   
           </View>
             <View style={styles.itemDesc}>
-                <TouchableWithoutFeedback onPress={() => setExpanded(!expanded)}>
+                <TouchableWithoutFeedback onPress={() => setExpanded(!expanded )}>
                   <Text>{desc}</Text>
               </TouchableWithoutFeedback>
   
@@ -75,7 +76,7 @@ export  default  Item=({ id, item }) =>{
             </View>
   
             <View style={styles.itemDiscount}>
-              <View style={!selected?styles.discount: styles.discountExpand}>   
+              <View style={!selected && !expanded?styles.discount: styles.discountExpand}>   
                 <Text style={styles.percent}>%</Text>
             </View>
   
