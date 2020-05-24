@@ -39,21 +39,22 @@ import Icon from 'react-native-vector-icons/FontAwesome';
                     uri: item.url }}
                     />
           }
-        {/* hidesection */}
       <View style={{flexDirection:'column',justifyContent: 'space-between'}}>
-          <View style={{flexDirection:'row',justifyContent:'space-between',marginTop: 10,padding:5}}>
+          <View style={styles.itemName}>
                 <Text style={styles.title}>{item.name}</Text>
           
-          <View style={{flexDirection:'row',justifyContent:'space-between',width:'27%' ,padding:5}}>
+          <View style={styles.itemRating}>
                 <Rating imageSize={14} readonly startingValue={item.rating} style={{marginTop: 0}} />
                 <Text style={{fontSize: 10}} >({item.rating})</Text>
           </View>
+
         </View>
-          <View style={{flexDirection:'column',justifyContent:'space-between',marginTop: 12,padding:5}}>
+          <View style={styles.itemDesc}>
               <TouchableWithoutFeedback onPress={() => setExpanded(!expanded)}>
                 <Text>{desc}</Text>
             </TouchableWithoutFeedback>
-            <View style={{flexDirection:'row',justifyContent:'space-between',width:'30%',marginTop: 10,padding:5}}>
+
+          <View style={styles.itemIcons}>
                   <Icon name="apple" size={20} color="#8a8888" />
                   <Icon name="tint" size={20} color="#8a8888" />
                   <Icon name="cutlery" size={20} color="#8a8888" />
@@ -61,25 +62,25 @@ import Icon from 'react-native-vector-icons/FontAwesome';
             </View>
           </View>
 
-          <View style={{flexDirection:'row',justifyContent:'space-between',width:'100%',marginTop: 10}}>
+          <View style={styles.itemDiscount}>
             <View style={!selected?styles.discount: styles.discountExpand}>   
               <Text style={styles.percent}>%</Text>
-            </View>
+          </View>
+
             <View style={{flexDirection:'column',width:'25%',marginTop: 10}}>   
                 <Text style={styles.oldprice}>35,00$</Text>
                 <Text  style={styles.price}>29.00$</Text>
             </View>
+
             <View style={styles.qty}>   
-            <TouchableWithoutFeedback onPress={() => {if(count>0) setCount(count - 1)}}>
+              <TouchableWithoutFeedback onPress={() => {if(count>0) setCount(count - 1)}}>
                <Text style={styles.title}>-</Text>
               </TouchableWithoutFeedback>
 
               <Text style={styles.title}>{count}</Text>
-              <TouchableWithoutFeedback onPress={() => setCount(count + 1)}>
-                 {/* <Icon name="plus" size={20} color="#000" style={{alignSelf:'center'}} /> */}
-                 <Text style={styles.title}>+</Text>
-               
-              </TouchableWithoutFeedback>
+               <TouchableWithoutFeedback onPress={() => setCount(count + 1)}>
+                  <Text style={styles.title}>+</Text>
+               </TouchableWithoutFeedback>
             </View>
              
           </View>
@@ -220,9 +221,13 @@ const styles = StyleSheet.create({
     borderWidth:3,
     marginTop: 15,
     alignSelf:'center',
-
-   
     },
+
+    itemName:{flexDirection:'row',justifyContent:'space-between',marginTop: 10,paddingLeft:15},
+    itemRating:{flexDirection:'row',justifyContent:'space-between',width:'30%' ,padding:5},
+    itemIcons:{flexDirection:'row',justifyContent:'space-between',width:'30%',marginTop: 10,padding:5},
+    itemDesc:{flexDirection:'column',justifyContent:'space-between',marginTop: 12,paddingLeft:15},
+    itemDiscount:{flexDirection:'row',justifyContent:'space-between',width:'100%',marginTop: 10},
 
     qty:{
       padding:5,
