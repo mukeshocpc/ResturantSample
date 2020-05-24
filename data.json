@@ -3,6 +3,8 @@
     {
     "rating":1.7,    
     "category":"Breakfast",
+    "price":20.06,
+    "oldprice":15.05,
     "name":"Breakfast 1",
     "url": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
@@ -10,6 +12,8 @@
 {
     "category":"Breakfast",
     "rating":2.7, 
+    "price":30.04,
+    "oldprice":19.90,
     "name":"Breakfast 2",
     "url":"https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
@@ -17,6 +21,8 @@
 {
     "category":"Snacks",
     "rating":4.7, 
+     "price":30.00,
+    "oldprice":19.90,
     "name":"Snacks 1",
     "url":"https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
@@ -24,6 +30,8 @@
 {
     "category":"Snacks",
     "rating":3.7, 
+     "price":30.00,
+    "oldprice":19.90,
     "name":"Snacks 2",
     "url":"https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
@@ -31,6 +39,8 @@
 {
     "category":"Piza",
     "rating":4.7, 
+     "price":30.00,
+    "oldprice":19.90,
     "name":"Piza 1",
     "url":"https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
@@ -38,6 +48,8 @@
 {
     "category":"Piza",
     "rating":4, 
+     "price":30.00,
+    "oldprice":19.90,
     "name":"Piza 2",
     "url":"https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
@@ -45,6 +57,8 @@
 {
     "category":"Quesadilla",
     "rating":4.7, 
+     "price":30.00,
+    "oldprice":19.90,
     "name":"Quesadilla 1",
     "url":"https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
@@ -52,13 +66,17 @@
 {
     "category":"Quesadilla",
     "rating":3.7, 
+     "price":30.00,
+    "oldprice":19.90,
     "name":"Quesadilla 2",
     "url":"https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
 },
 {
     "category":"Fastfood",
-    "rating":1.7, 
+    "rating":1.7,
+     "price":30.00,
+    "oldprice":19.90, 
     "name":"Fastfood 1",
     "url":"https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
@@ -66,6 +84,8 @@
 {
     "category":"Fastfood",
     "rating":2.7, 
+     "price":30.00,
+    "oldprice":19.90,
     "name":"Fastfood 2",
     "url":"https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"

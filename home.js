@@ -13,98 +13,12 @@ import {
 import { Card,Rating } from 'react-native-elements';
 import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view';
 import allitems from './data.json';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 
- const Item=({ id, item }) =>{
-  const [expanded, setExpanded] =useState(false);
-  const [selected, setSelected] = useState(false);
-  const [count, setCount] = useState(0);
-  let desc=expanded ? item.desc:text_truncate(item.desc,54,'...')
-  return (
-    <TouchableWithoutFeedback
-      onPress={() => setSelected(!selected)}
-      style={[
-        styles.item,
-        { backgroundColor: '#6e3b6e'},
-      ]}
-    >
+import {styles} from './styles.js'
+import Item from './item.js'
 
-
-     <View style={[styles.card,{ width:selected?"98%":"90%", borderRadius:selected?0:20}]}>
-     {selected &&
-              <Image
-                    style={{width:'100%',height: 200}}
-                    source={{
-                    uri: item.url }}
-                    />
-          }
-      <View style={{flexDirection:'column',justifyContent: 'space-between'}}>
-          <View style={styles.itemName}>
-                <Text style={styles.title}>{item.name}</Text>
-          
-          <View style={styles.itemRating}>
-                <Rating imageSize={14} readonly startingValue={item.rating} style={{marginTop: 0}} />
-                <Text style={{fontSize: 10}} >({item.rating})</Text>
-          </View>
-
-        </View>
-          <View style={styles.itemDesc}>
-              <TouchableWithoutFeedback onPress={() => setExpanded(!expanded)}>
-                <Text>{desc}</Text>
-            </TouchableWithoutFeedback>
-
-          <View style={styles.itemIcons}>
-                  <Icon name="apple" size={20} color="#8a8888" />
-                  <Icon name="tint" size={20} color="#8a8888" />
-                  <Icon name="cutlery" size={20} color="#8a8888" />
-                  <Icon name="tint" size={20} color="#8a8888" />
-            </View>
-          </View>
-
-          <View style={styles.itemDiscount}>
-            <View style={!selected?styles.discount: styles.discountExpand}>   
-              <Text style={styles.percent}>%</Text>
-          </View>
-
-            <View style={{flexDirection:'column',width:'25%',marginTop: 10}}>   
-                <Text style={styles.oldprice}>35,00$</Text>
-                <Text  style={styles.price}>29.00$</Text>
-            </View>
-
-            <View style={styles.qty}>   
-              <TouchableWithoutFeedback onPress={() => {if(count>0) setCount(count - 1)}}>
-               <Text style={styles.title}>-</Text>
-              </TouchableWithoutFeedback>
-
-              <Text style={styles.title}>{count}</Text>
-               <TouchableWithoutFeedback onPress={() => setCount(count + 1)}>
-                  <Text style={styles.title}>+</Text>
-               </TouchableWithoutFeedback>
-            </View>
-             
-          </View>
-          </View>
-      </View>
-      
-    </TouchableWithoutFeedback>
-  );
-}
-
-text_truncate = (str, length, ending) =>{
-  if (length == null) {
-    length = 100;
-  }
-  if (ending == null) {
-    ending = '...';
-  }
-  if (str.length > length) {
-    return str.substring(0, length - ending.length) + ending;
-  } else {
-    return str;
-  }
-};
-
+const url= 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
 
 
 export default class App extends React.Component {
@@ -130,13 +44,10 @@ export default class App extends React.Component {
       <StatusBar barStyle="dark-content" />
            <View styles={styles.Header}>
               <Image
-              style={{width:'100%',height: 250}}
-                source={{
-              uri: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-            }}
-          />
+               style={{width:'100%',height: 250}}
+                source={{uri: url }}
+           />
        </View>
-  
        <SafeAreaView>
           <View styles={styles.container}>
               <ScrollableTabView style={styles.tabs}
@@ -172,95 +83,3 @@ export default class App extends React.Component {
     );
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    paddingTop: 20,
-    backgroundColor: '#ecf0f1',
-  },
-  paragraph: {
-    margin: 24,
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: '#34495e',
-  },
- tabs: {height:"7%",
- backgroundColor:'#e0e0e0'
- },
-  list:{
-    height: '93%',
-    paddingBottom: '25%',
-  },
-  title: {
-    alignSelf:'center',
-    fontSize: 25,
-  },
-  price: {
-    fontSize: 22,
-    fontWeight:"bold"
-  },
-  percent: {
-    padding:10,
-    fontSize: 22,
-    color:'white',
-    fontWeight:"bold",
-    alignSelf:'flex-end'
-  },
-  oldprice: {
-    textDecorationLine: 'line-through', 
-    textDecorationStyle: 'solid', 
-    fontSize: 18
-  }
-  ,
-  card:{
-    width:"90%",
-    borderColor:'#eee',
-    borderWidth:3,
-    marginTop: 15,
-    alignSelf:'center',
-    },
-
-    itemName:{flexDirection:'row',justifyContent:'space-between',marginTop: 10,paddingLeft:15},
-    itemRating:{flexDirection:'row',justifyContent:'space-between',width:'30%' ,padding:5},
-    itemIcons:{flexDirection:'row',justifyContent:'space-between',width:'30%',marginTop: 10,padding:5},
-    itemDesc:{flexDirection:'column',justifyContent:'space-between',marginTop: 12,paddingLeft:15},
-    itemDiscount:{flexDirection:'row',justifyContent:'space-between',width:'100%',marginTop: 10},
-
-    qty:{
-      padding:5,
-      flexDirection:'row',
-      width:'40%',
-      justifyContent:'space-between',
-      margin: 5,
-      backgroundColor:'#e3e2e1',
-      marginTop:5,
-      borderRadius:10,
-      borderWidth: 1,
-      borderColor: '#a3a2a2'
-    },
-    discount:{
-      borderBottomLeftRadius: 20,
-      borderTopEndRadius:20,
-      flexDirection:'column',
-      alignItems: 'flex-end',
-      justifyContent:'flex-end',
-      width:'14%',
-      marginTop: 10,
-      backgroundColor:'#0a6ea3'
-    },
-    discountExpand:{
-      borderBottomLeftRadius: 0,
-      borderTopEndRadius:20,
-      flexDirection:'column',
-      alignItems: 'flex-end',
-      justifyContent:'flex-end',
-      width:'14%',
-      marginTop: 10,
-      backgroundColor:'#0a6ea3'
-    }
-
-    
-});
